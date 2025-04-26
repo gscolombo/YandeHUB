@@ -1,7 +1,7 @@
 # Visão e Escopo
 
 ### Introdução
-O presente documento apresenta uma visão geral acerca do projeto de desenvolvimento do *software* ExpoHUB, junto aos escopos de projeto e produto associados. Será apresentado uma descrição geral do produto, junto às soluções que almeja fornecer aos usuários e *stakeholders*, também especificados nesse documento.
+O presente documento apresenta uma visão geral acerca do projeto de desenvolvimento do *software* **ExpoHUB**, junto aos escopos de projeto e produto associados. Será apresentado uma descrição geral do produto, junto às soluções que almeja fornecer aos usuários e *stakeholders*, também especificados nesse documento.
 
 ---
 ### Posicionamento
@@ -16,12 +16,27 @@ Logo, **ExpoHUB é um sistema web destinado a qualquer indivíduo que tenha inte
 |Nome       | Descrição | Responsabilidade(s) |
 |---------  |-----------|----------------- |
 |Feirante   | Indivíduo ou grupo de atuação autonôma na venda de mercadorias em feiras | Utilização do sistema para divulgação de produtos |
-|Participante|Indivíduo interessado na participação em feiras como consumidor| Utilização do sistema para visualização de produtos e compra de ingressos para participação em feiras|
+|Expositor| Indivíduo ou grupo de atuação com exposição cadastrada em uma feira | Utilização do sistema para divulgação de produtos
+|Participante|Indivíduo de posse de ingressos para participação em feiras como consumidor| Utilização do sistema para visualização de produtos e compra de ingressos para participação em feiras|
 |Organizador de evento| Indivíduo ou grupo interessado na organização de feiras | Utilização do sistema para criação de feiras; fornecimento de suporte a Participantes; investimento nos custos de desenvolvimento e manutenção do sistema |
 | Desenvolvedor | Indivíduo atuante nas etapas de execução do projeto quanto a construção, validação e manutenção do sistema | Desenvolvimento de *software* do sistema; Teste de *software* do sistema; Execução de tarefas voltadas à construção, manutenção e validação de *sofware* do sistema |
 Gerente de Projeto | Indivíduo encarregado da organização e monitoramento de processos de *software* | Especificação e validação de requisitos do sistema; Gerenciamento de tarefas para execução de projeto de *software* do sistema; Validação de processos de *software* do sistema
 
 ---
+
+### Escopo do produto
+
+O *sofware* **ExpoHUB** permitirá a visualização, divulgação e gerenciamento de feiras pelos usuários. O gerenciamento se limita à **compra e venda de ingressos**, **listagem de participantes** e **cadastro e divulgação de produtos por feira**. Logo, o *software* **não é destinado** ao gerenciamento da logística, definição de cronogramas/programação e controle de acesso a qualquer feira que seja cadastrada no *sofware*.<br>
+De maneira geral, o *sofware* permitirá as seguintes operações:
+
+- Cadastro, listagem e visualização de:
+  - Feiras
+  - Expositores em uma feira
+  - Produtos em uma feira
+  - Produtos de um expositor em uma feira
+- Compra e venda de ingressos para participação em feira
+- Listagem de participantes de uma feira
+- Cadastro de usuário de tipo definido (Participante, Expositor ou Organizador)
 
 ### Escopo do projeto
 
@@ -40,7 +55,7 @@ As atividades do projeto são apresentadas abaixo:
   - Definição geral da arquitetura
     - Tipo de arquitetura
     - Principais módulos e suas interrelações
-  - Criação de modelos UML
+  - Criação de modelos
 - #### Escolha de tecnologias
   - Definição de linguagens de programação utilizadas
   - Definição de *frameworks* ou bibliotecas de código necessárias/relevantes
@@ -72,4 +87,4 @@ As atividades do projeto são apresentadas abaixo:
 - #### Desenvolvimento de *sofware*
   - Execução de tarefas definidas na iteração atual
 
-De cima para baixo, a listagem define uma possível sequẽncia a ser cumprida, mas é possível que algumas atividades ocorram simultaneamente a outras ou em ordem inversa, ou ainda que algumas atividades se repitam durante a execução do projeto, como "Refinamento de arquitetura" ou "Criação de tarefas para o *backlog*". De qualquer forma, será priorizada a execução das atividades na sequẽncia descrita, na medida do possível.
+De cima para baixo, a listagem define uma possível sequẽncia a ser seguida, mas é possível que algumas atividades ocorram simultaneamente a outras ou em ordem inversa, ou ainda que algumas atividades se repitam durante a execução do projeto, como "Refinamento de arquitetura" ou "Criação de tarefas para o *backlog*". De qualquer forma, será priorizada a execução das atividades na sequẽncia apresentada, na medida do possível.
