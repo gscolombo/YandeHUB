@@ -1,4 +1,5 @@
-# Visão e Escopo
+# ExpoHUB
+## Visão e Escopo
 
 ### Introdução
 O presente documento apresenta uma visão geral acerca do projeto de desenvolvimento do *software* **ExpoHUB**. Será apresentada uma descrição geral do produto, junto às soluções que almeja fornecer aos usuários e *stakeholders*, também especificados nesse documento.
@@ -13,11 +14,11 @@ Logo, **ExpoHUB é um sistema web destinado a qualquer indivíduo que tenha inte
 ---
 ### Stakeholders
 
-|Nome       | Descrição | Responsabilidade(s) |
+|Nome       | Descrição | Responsabilidade(s) / Papel(éis) |
 |---------  |-----------|----------------- |
-|Feirante   | Indivíduo ou grupo de atuação autonôma na venda de mercadorias em feiras. | Utilização do sistema para divulgação de produtos. |
-|Expositor| Indivíduo ou grupo de atuação com exposição cadastrada em uma feira. | Utilização do sistema para divulgação de produtos.
-|Participante|Indivíduo de posse de ingressos para participação em feiras como consumidor. | Utilização do sistema para visualização de produtos e compra de ingressos para participação em feiras. |
+| Visitante | Indivíduo interessado em visitar feiras | Utilização do sistema como usuário não autenticado. |
+|Expositor| Indivíduo ou grupo de atuação com exposição cadastrada em uma feira. | Utilização do sistema para divulgação de produtos; Utilização do sistema para divulgação de exposição. 
+|Participante|Indivíduo interessado em participar de feiras como consumidor. | Utilização do sistema para visualização de produtos e compra de ingressos para participação em feiras. |
 |Organizador de evento| Indivíduo ou grupo interessado na organização de feiras. | Utilização do sistema para criação de feiras; fornecimento de suporte a Participantes; investimento nos custos de desenvolvimento e manutenção do sistema. |
 | Desenvolvedor | Indivíduo atuante nas etapas de execução do projeto quanto a construção, validação e manutenção do produto. | Desenvolvimento de *software* do sistema; Teste de *software* do sistema; Execução de tarefas voltadas à construção, manutenção e validação de *sofware* do sistema. |
 Gerente de Projeto | Indivíduo encarregado da organização e monitoramento de processos de *software*. | Especificação e validação de requisitos do sistema; Gerenciamento de tarefas para execução de projeto de *software* do sistema; Validação de processos de *software* do sistema.
