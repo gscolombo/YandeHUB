@@ -39,7 +39,7 @@ O quadro *kanban* terá as seguintes colunas: *Backlog*, *Para fazer*, *Em andam
 Um modelo de _card_ de tarefa pode ser conferido abaixo. Para todo _card_, deve ser atribuído uma categoria (_label_) e uma prioridade, assim como um repositório associado. Dessa forma, todo card consiste em uma _issue_ de algum repositório. _Issues_ podem conter _sub-issues_, ou seja, subtarefas. *Cards* que não correspondem a uma *issue* de algum repositório são definidos como *drafts* (rascunhos) por padrão no Github Projects.
 
 ---
-> # Modelo de _card_ de tarefa 
+> # Título da tarefa 
 > *Definição da tarefa*
 > ### Descrição (opcional)
 > *Detalhamento sobre o trabalho a ser feito.*
@@ -55,6 +55,8 @@ O cronograma tentativo atual do projeto, dividido em iterações por linha, é a
 
 | Período | Atividades | Marcos |
 |:----:|----|----|
-| <div style="width:max-content">05/05 - 12/05</div>  | <ul><li>Definição de casos de uso</li><li>Elicitação de requisitos<ul><li>Criação de histórias de usuário</li><li>Definição de requisitos de sistema</li></ul></li> | <ul><li>Histórias de usuário para: <ul><li>Visualização de conteúdo em página inicial</li><li>Login e cadastro de usuário</li></ul></li></ul> |
-| <div style="width:max-content">12/05 - 19/05</div> | <li>Definição inicial de arquitetura de *software*</li><li>Elaboração de diagrama de entidade-relacionamento</li><li>Elaboração inicial de protótipo de interface de usuário</li> | <li>Elaboração de modelo básico de arquitetura do *software*</li><li>Elaboração de diagrama de entidade-relacionamento que possibilite login/cadastro de usuário em banco de dados</li><li>*Wireframe* de tela de início (*home-page*)</li><li>*Wireframe* de tela de login</li> |
-|<div style="width:max-content">19/05 - 26/05</div>| <li>Detalhamento de protótipo de interface de usuário</li><li>Desenvolvimento *front-end*</li>| <li>Protótipo de tela de início</li><li>Protótipo de tela de login</li><li>Implementação de interface de usuário para login e cadastro</li> |
+| <div style="width:max-content">05/05 - 12/05</div>  | <ul><li>Definição de casos de uso</li><li>Elicitação de requisitos<ul><li>Criação de histórias de usuário</li><li>Definição de requisitos de sistema</li></ul> | <ul><li>Histórias de usuário para: <ul><li>Visualização de conteúdo em página inicial</li><li>Login e cadastro de usuário</li></ul></li></ul> |
+| <div style="width:max-content">13/05 - 19/05</div> | <ul><li>Definição de arquitetura de *software*</li><li>Elaboração de diagrama de entidade-relacionamento</li><li>Elaboração inicial de protótipo de interface de usuário</li></ul> | <ul><li>Modelo básico de arquitetura do *software*</li><li>Diagrama de entidade-relacionamento final</li><li>*Wireframe* de tela de início (*home-page*)</li><li>*Wireframe* de tela de login</li></ul> |
+|<div style="width:max-content">20/05 - 26/05</div>| <ul><li>Detalhamento de protótipo de interface de usuário</li><li>Desenvolvimento da interface de usuário da tela de login</li></ul> | <ul><li>Protótipo de tela de início</li><li>Protótipo de tela de login</li><li>Interface de usuário para login e cadastro</li></ul> |
+| <div style="width:max-content">27/05 - 02/06</div>  | <ul><li>Implementação de serviço para autenticação de usuário<ul><li>Serviço de *login*</li><li>Serviço de cadastro</li></ul></li><li>Criação de histórias de usuário para criação, edição e deleção de registros</li><li>Criação de histórias de usuário para edição e deleção de conta</li></ul>| <ul><li>Histórias de usuário para criação e deleção de registros.</li><li>Histórias de usuário para edição e deleção de conta.</li><li>Serviço de *login* implementado</li><li>Serviço de cadastro implementado</li></ul> |
+| <div style="width:max-content">02/06 - 09/06</div>  | <ul><li>Elaboração inicial de protótipo de interface de usuário para criação/edição/deleção de registro</li><li>Elaboração inicial de protótipo de interface de usuário para edição/deleção de conta</li></ul> | <ul><li>*Wireframe* de tela para criação/edição/deleção de registro</li><li>*Wireframe* de tela para edição/deleção de conta</li></ul> |
