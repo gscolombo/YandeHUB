@@ -1,0 +1,30 @@
+# ExpoHUB
+
+### Arquitetura de *software*
+
+## 1. Propósito
+Esse documento descreve as decisões, restrições e premissas técnicas para definição da arquitetura do sistema **ExpoHUB**, assim como quaisquer outras informações relevantes para a estrutura e organização do *software*.
+
+## 2. Objetivos arquitetônicos
+A arquitetura de *software* para o sistema **ExpoHUB** deve permitir o uso pelo usuário de diferentes serviços para consulta, alteração e deleção de dados armazenados remotamente. Além disso, devido à restrição para execução em navegadores *web*, é esperado que a arquitetura considere a variabilidade de *hardware* e qualidade de conexão à Internet dos usuários para satisfazer os [requisitos de performance e usabilidade do *software*](system_wide_requirements.md).<br>
+Pela possibilidade de inclusão de novos serviços além daqueles apresentados no [documento de visão e escopo](vision_scope.md), assim como possíveis alterações de requisitos, a arquitetura deve possuir componentes suficientemente desacoplados para permitir alterações e/ou incrementos em partes do sistema sem que haja comprometimento de outras partes ou ainda de todo o sistema. Nesse caso, isso requer a definição de interfaces bem definidas entre componentes.<br>
+Devido a necessidade de autenticação de usuários para uso de serviços restritos, assim como a listagem e visualização de registros, a arquitetura deve garantir que os dados associados ao sistema possam ser manipulados, com as devidas restrições, por diferentes usuários de modo concorrente. Ou seja, deve haver um componente único responsável pelo armazenamento dos dados, cuja interface deve estar bem definida para permitir a comunicação de serviços com esse componente.
+
+## 3. Decisões, restrições e justificativas
+- O desenvolvimento de *software* será realizado com [**Django**](https://www.djangoproject.com/start/overview/), um *framework* *open-source* para desenvolvimento de aplicativos *web*, que provê funcionalidades para autenticação de usuário, comunicação com banco de dados, renderização dinâmica de conteúdo, etc. A facilidade de uso e rapidez de desenvolvimento permitirão o rápido *deploy* do sistema em um ambiente de produção.
+- Desacoplamento entre visualização (*i.e.*, interface de usuário), manipulação (*i.e.*, serviços) e armazenamento de dados deve ser garantido, com interfaces bem definidas para permitir a comunicação entre os componentes respectivos, de tal forma que a alteração/incremento de partes não críticas não comprometam o funcionamento do sistema.
+- O acesso a serviços deve ser dividido entre serviços privados e públicos. Os primeiros devem negar a requisição de usuários não autenticados, enquanto os segundos não possuem qualquer restrição para requisição. No entanto, ambos devem restringir a manipulação de dados para o mínimo necessário para realização do serviço.
+- Qualquer serviço que envolva inserção, modificação ou deleção de dados deve ser realizada somente por usuários autenticados. A requisição desses serviços deve ser devidamente registrada em arquivos de *log*, apresentando ID e nome do usuário requisitante, data da requisição, serviço requisitado e parâmetros da requisição.
+- O sistema de gerenciamento de banco de dados relacional (SGBDR) utilizado será o [PostgreSQL](https://www.postgresql.org/). Inicialmente, o banco de dados [SQLite](https://docs.djangoproject.com/en/5.2/intro/install/#install-python) inicializado pelo Django poderá ser utilizado, mas deve-se ter em mente a transição para o PostgreSQL em um ambiente de produção.
+
+## 4. Padrão de arquitetura
+Em conformidade com o oferecido pelo *framework* Django, a arquitetura do sistema será baseado no padrão MVC (do inglês, *Model-View-Controller*), com algumas modificações para diferenciar serviços dos modelos de dados em si. Os componentes referentes ao *Controller* e à *View* devem ter suas funções originais do padrão preservadas. Note que o Django utiliza os termos *View* para o que seria o *Controller* e *Template* para o que seria a *View*, como explicado [aqui](https://docs.djangoproject.com/en/5.2/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names).
+
+## 5. Visualizações de arquitetura
+Abaixo é apresentada a visualização lógica da arquitetura.
+
+![image](/docs/images/system_architecture.drawio.svg).
+
+Como descrito acima, um Serviço é o que permite a manipulação de modelos de dados pelo usuário, a partir da requisição recebida e mapeada pelo Controlador. Um Serviço pode chamar um método de um ou mais Modelos para executar a operação necessária. Tais métodos são específicos de um Modelo e não devem depender de atributos ou métodos de outros Modelos.
+Por sua vez, um Modelo deve ser capaz de se comunicar com um banco de dados. Os métodos implementados para um Modelo devem representar transações no banco de dados e operações específicas para o modelo, como a autenticação de credenciais de um usuário (cujo método associado pode ser utilizado por um serviço de autenticação para retorno de um *token*, por exemplo).<br>
+Como mencionado acima, o Controlador e a Visualização mantém suas funções originais do padrão MVC, com a diferença que o Controlador realiza chamadas para Serviços ao invés de Modelos. O Controlador também é responsável por retornar visualizações ao usuário de páginas HTML geradas dinamicamente, definida por uma Visualização que importa Modelos para apresentação dos dados armazenados no banco de dados.
