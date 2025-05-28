@@ -1,0 +1,10 @@
+<form action="{{ action }}" method="post">
+    {% if safe %}
+    {% csrf_token %}
+    {% endif %}
+    <h2>{{ form.name }}</h2>
+    {{ form }}
+    {% include "shared/button.html" with type="submit" button_text="Enviar" css_class="submit-button" %}
+    {% block form_extra_content%}
+    {% endblock form_extra_content%}
+</form>

@@ -1,0 +1,75 @@
+@import 'shared.css';
+
+
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    width: 760px;
+}
+
+form h2 {
+    color: white;
+}
+
+form h2,
+form div {
+    grid-column: 1/-1;
+}
+
+form input {
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--secondary-orange);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+}
+
+form input:focus {
+    outline: var(--dark-orange) solid 1px;
+}
+
+form input::placeholder {
+    color: #FFFFFFAA;
+}
+
+form div:first-of-type {
+    grid-row: 2;
+}
+
+form button:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
+}
+
+form button.submit-button,
+form button.register-button,
+form button.forgot-password-button {
+    border: none;
+    border-radius: 10px;
+    padding: 20px 10px;
+    font-size: 1.25rem;
+    color: white;
+    background-color: var(--dark-orange);
+    width: 100%;
+    height: fit-content;
+}
+
+form div:last-of-type {
+    grid-row: 3;
+}
+
+form button.submit-button {
+    grid-column: 3;
+    background-color: var(--dark-green);
+    font-size: 1.75rem;
+    padding: 16px 10px;
+}
+
+form button.register-button {
+    grid-column: 2;
+}
+
+
