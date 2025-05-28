@@ -1,4 +1,7 @@
-<form action="{{ action }}" method="post">
+{% load static %}
+
+<form action="{{ action }}" method="{{ method|default:'post' }}">
+    {% csrf_token %}
     {% if safe %}
     {% csrf_token %}
     {% endif %}
@@ -8,3 +11,5 @@
     {% block form_extra_content%}
     {% endblock form_extra_content%}
 </form>
+
+<script defer src="{% static 'js/submitForm.js' %}"></script>

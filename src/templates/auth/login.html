@@ -10,7 +10,7 @@
 {% block content %}
 <img src="{% static "img/plants.jpg" %}" alt="Desenho de folhas em preto e branco" />
 {% include "shared/button.html" with css_class="back-button" button_text="Voltar" %}
-{% include "auth/login_form.html" %}
+{% include "auth/login_form.html" with action="/auth/login" %}
 
 {% endblock content %}
 
