@@ -56,3 +56,8 @@ input, textarea, select {
     font-size: 1.75rem;
     font-weight: 400;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

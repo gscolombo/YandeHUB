@@ -2,10 +2,6 @@
 
 {% block form_extra_content %}
 <span class="error-message">Usuário não encontrado!</span>
-<button class="register-button">
-    Realizar cadastro
-</button>
-<button class="forgot-password-button">
-    Esqueci minha senha
-</button>
+{% include "shared/button.html" with link="/auth/register" text="Realizar cadastro" css_class="register-button" %}
+{% include "shared/button.html" with link="" text="Esqueci minha senha" css_class="forgot-password-button" %}
 {% endblock form_extra_content%}

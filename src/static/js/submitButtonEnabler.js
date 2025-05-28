@@ -11,7 +11,7 @@
  */
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("form");
-    const submit = document.querySelector(".submit-button");
+    const submit = form.querySelector(".submit-button");
     let inputs = form.querySelectorAll("input");
     submit.disabled = Array.from(inputs).map(input => input.value.trim() === "").includes(true);
 

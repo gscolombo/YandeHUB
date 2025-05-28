@@ -6,7 +6,11 @@
     {% if icon %}
     <img src="{% static icon_src %}" alt="Icon" class="button-icon">
     {% endif %}
-    <span>{{ button_text }}</span>
+    {% if link%}
+    <a href="{{ link }}">{{ text }}</a>
+    {% else %}
+    <span>{{ text }}</span>
+    {% endif %}
 </button>
 
 {% endblock button %}

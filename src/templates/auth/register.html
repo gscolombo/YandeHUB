@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/auth/login.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/auth/register.css' %}">
 {% endblock stylesheets %}
 
-{% block pageName %} - Login{% endblock %}
+{% block pageName %} - Cadastro{% endblock %}
 
 {% block content %}
 <img class="bg" src="{% static "img/plants.jpg" %}" alt="Desenho de folhas em preto e branco" />
 {% include "shared/button.html" with css_class="back-button" text="Voltar" %}
-{% include "auth/login_form.html" with action="/auth/login" %}
+{% include "auth/register_form.html" with action="/auth/register" %}
 
 {% endblock content %}
 
