@@ -8,7 +8,7 @@
 {% block pageName %} - Login{% endblock %}
 
 {% block content %}
-<img src="{% static "img/plants.jpg" %}" alt="Desenho de folhas em preto e branco" />
+<img class="bg" src="{% static "img/plants.jpg" %}" alt="Desenho de folhas em preto e branco" />
 {% include "shared/button.html" with css_class="back-button" button_text="Voltar" %}
 {% include "auth/login_form.html" with action="/auth/login" %}
 

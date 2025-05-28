@@ -1,6 +1,10 @@
 {% load static %}
 
 <form action="{{ action }}" method="{{ method|default:'post' }}">
+    <div class="loading-icon" >
+        <img src={% static "img/loading.svg" %} />
+        <span>Carregando...</span>
+    </div>
     {% csrf_token %}
     {% if safe %}
     {% csrf_token %}

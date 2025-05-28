@@ -11,7 +11,7 @@ body {
     justify-content: center;
 }
 
-img {
+.bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -32,4 +32,43 @@ form {
     position: fixed;
     top: 30px;
     left: 30px;
+}
+
+form .loading-icon {
+    display: none;
+}
+
+form.waiting-response {
+    pointer-events: none;
+    z-index: 0;
+    position: relative;
+}
+
+form.waiting-response .loading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF33;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    grid-area: none;
+    border-radius: 10px;
+}
+
+form.waiting-response .loading-icon img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+form.waiting-response .loading-icon span {
+    position: absolute;
+    font-size: 2rem;
+    color: white;
 }

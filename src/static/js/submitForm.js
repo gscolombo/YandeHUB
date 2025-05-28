@@ -7,18 +7,15 @@ document.addEventListener("DOMContentLoaded", function() {
         if (submit.disabled) {
             return;
         }
-        console.log("Form submitted successfully!");
-
+        
+        form.classList.add("waiting-response");
         const formData = new FormData(form);
         fetch(form.action, {
             method: form.method,
             body: formData,
         })
-        .then(response => {
-            response.json()
-        })
-        .then(json => {
-            console.log(json);
+        .finally(() => {
+            form.classList.remove("waiting-response");
         })
     });
 });

@@ -1,6 +1,11 @@
+{% load static %}
 {% block button %}
 
+
 <button type="{{ type|default:"button" }}" class="{{ css_class }}">
+    {% if icon %}
+    <img src="{% static icon_src %}" alt="Icon" class="button-icon">
+    {% endif %}
     <span>{{ button_text }}</span>
 </button>
 
