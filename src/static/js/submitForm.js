@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
             method: form.method,
             body: formData,
         })
+        .then(res => {
+            if (!res.ok) {
+                form.classList.add("error");
+            }
+        })
         .finally(() => {
             form.classList.remove("waiting-response");
         })
