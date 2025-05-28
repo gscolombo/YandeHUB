@@ -68,6 +68,12 @@ form button.submit-button {
     padding: 16px 10px;
 }
 
+form button.submit-button:disabled {
+    opacity: 0.5;
+    transition: none;
+    pointer-events: none;
+}
+
 form button.register-button {
     grid-column: 2;
 }
