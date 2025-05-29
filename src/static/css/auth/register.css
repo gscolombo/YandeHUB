@@ -16,3 +16,17 @@ form button.return-login-button {
     height: fit-content;
     grid-column: 3;
 }
+
+form .error-list {
+    grid-row: 6/-1;
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+form .error-list .error-item {
+    color: var(--dark-red);
+    font-weight: 700;
+}

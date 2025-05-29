@@ -73,7 +73,6 @@ form button:hover {
 
 form button.submit-button:disabled {
     opacity: 0.5;
-    transition: none;
     pointer-events: none;
 }
 
