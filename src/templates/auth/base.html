@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/auth/shared.css' %}">
+{% block formStylesheet %}
+{% endblock formStylesheet%}
+{% endblock stylesheets %}
+
+{% block pageName %} - {{ form.name }}{% endblock %}
+
+{% block content %}
+<img class="bg" src="{% static "img/plants.jpg" %}" alt="Desenho de folhas em preto e branco" />
+{% include "shared/button.html" with css_class="back-button" text="Voltar" link="/" %}
+
+{% block formContent %}
+{% endblock formContent %}
+
+{% endblock content %}
+
+{% block scripts %}
+<script defer src='{% static "js/submitButtonEnabler.js" %}'></script>
+{% endblock scripts %}

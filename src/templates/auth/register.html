@@ -1,19 +1,10 @@
-{% extends "base.html" %}
+{% extends "auth/base.html" %}
 {% load static %}
 
-{% block stylesheets %}
+{% block formStylesheet %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/auth/register.css' %}">
-{% endblock stylesheets %}
+{% endblock formStylesheet %}
 
-{% block pageName %} - Cadastro{% endblock %}
-
-{% block content %}
-<img class="bg" src="{% static "img/plants.jpg" %}" alt="Desenho de folhas em preto e branco" />
-{% include "shared/button.html" with css_class="back-button" text="Voltar" link="/" %}
+{% block formContent %}
 {% include "auth/register_form.html" with action="/auth/register" %}
-
-{% endblock content %}
-
-{% block scripts %}
-<script defer src='{% static "js/submitButtonEnabler.js" %}'></script>
-{% endblock scripts %}
+{% endblock formContent %}
