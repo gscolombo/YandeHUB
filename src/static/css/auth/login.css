@@ -10,12 +10,17 @@ form button.register-button,
 form button.forgot-password-button {
     border: none;
     border-radius: 10px;
-    padding: 20px 10px;
-    font-size: 1.25rem;
-    color: white;
     background-color: var(--dark-orange);
     width: 100%;
     height: fit-content;
+}
+
+form button.register-button a,
+form button.forgot-password-button a {
+    color: white;
+    display: block;
+    padding: 20px 10px;
+    font-size: 1.25rem;
 }
 
 form button.register-button {

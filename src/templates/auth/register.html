@@ -9,7 +9,7 @@
 
 {% block content %}
 <img class="bg" src="{% static "img/plants.jpg" %}" alt="Desenho de folhas em preto e branco" />
-{% include "shared/button.html" with css_class="back-button" text="Voltar" %}
+{% include "shared/button.html" with css_class="back-button" text="Voltar" link="/" %}
 {% include "auth/register_form.html" with action="/auth/register" %}
 
 {% endblock content %}

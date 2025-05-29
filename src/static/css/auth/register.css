@@ -8,13 +8,17 @@ form {
 form button.return-login-button {
     border: none;
     border-radius: 10px;
-    padding: 20px 10px;
-    font-size: 1.25rem;
-    color: white;
     background-color: var(--dark-orange);
     width: 100%;
     height: fit-content;
     grid-column: 3;
+}
+
+form button.return-login-button a {
+    color: white;
+    display: block;
+    padding: 20px 10px;
+    font-size: 1.25rem;
 }
 
 form .error-list {

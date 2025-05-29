@@ -7,8 +7,12 @@ button {
 button.back-button {
     border-radius: 5px;
     background-color: var(--dark-green);
-    padding: 10px;
+}
+
+button.back-button a {
     color: white;
+    display: block;
+    padding: 10px;
 }
 
 button:hover {
