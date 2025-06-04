@@ -41,3 +41,13 @@ class RegisterForm(forms.Form):
         required=True,
         widget=forms.PasswordInput(attrs={'placeholder': 'Confirme a senha'})
     )
+
+
+class RecoverPasswordForm(forms.Form):
+    name = "Recuperação de senha"
+
+    email = forms.EmailField(
+        label="",
+        required=True,
+        widget=forms.EmailInput(attrs={'placeholder': 'Email'})
+    )

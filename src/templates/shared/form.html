@@ -6,9 +6,6 @@
         <span>Carregando...</span>
     </div>
     {% csrf_token %}
-    {% if safe %}
-    {% csrf_token %}
-    {% endif %}
     <h2>{{ form.name }}</h2>
     {{ form }}
     {% include "shared/button.html" with type="submit" text="Enviar" css_class="submit-button" %}

@@ -1,36 +1,9 @@
-@import 'shared.css';
-
 form {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(7, 1fr);
 }
 
-form button.return-login-button {
-    border: none;
-    border-radius: 10px;
-    background-color: var(--dark-orange);
-    width: 100%;
-    height: fit-content;
-    grid-column: 3;
-}
-
-form button.return-login-button a {
-    color: white;
-    display: block;
-    padding: 20px 10px;
-    font-size: 1.25rem;
-}
-
 form .error-list {
     grid-row: 6/-1;
     grid-column: 1/3;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 1.5rem;
-}
-
-form .error-list .error-item {
-    color: var(--dark-red);
-    font-weight: 700;
 }
