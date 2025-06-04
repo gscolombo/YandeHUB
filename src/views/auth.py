@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest, JsonResponse
 from json import dumps
 
-from ..forms import LoginForm, RegisterForm, RecoverPasswordForm
+from ..forms import LoginForm, RegisterForm, RecoverPasswordForm, SetNewPasswordForm
 
 
 def login(request: HttpRequest) -> HttpResponse:
@@ -36,3 +36,8 @@ def recover_password(request: HttpRequest) -> HttpResponse:
     assert request.method == 'POST', "Invalid request method"
 
     return JsonResponse({})
+
+
+def set_new_password(request: HttpRequest) -> HttpResponse:
+    if request.method == 'GET':
+        return render(request, 'auth/set_new_password.html', context={"form": SetNewPasswordForm(), "logo": True})

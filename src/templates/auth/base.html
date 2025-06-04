@@ -11,7 +11,11 @@
 
 {% block content %}
 <img class="bg" src="{% static "img/plants.jpg" %}" alt="Desenho de folhas em preto e branco" />
+{% if logo|default_if_none:False %}
+<img class="logo" src="{% static "img/logo.svg" %}" alt="Logo do YandêHUB" />
+{% else%}
 {% include "shared/button.html" with css_class="back-button" text="Voltar" link="/" %}
+{% endif %}
 
 {% block formContent %}
 {% endblock formContent %}

@@ -51,3 +51,19 @@ class RecoverPasswordForm(forms.Form):
         required=True,
         widget=forms.EmailInput(attrs={'placeholder': 'Email'})
     )
+
+
+class SetNewPasswordForm(forms.Form):
+    name = "Cadastre uma nova senha"
+
+    password = forms.CharField(
+        label="",
+        required=True,
+        widget=forms.PasswordInput(attrs={'placeholder': 'Senha'})
+    )
+
+    confirm_password = forms.CharField(
+        label="",
+        required=True,
+        widget=forms.PasswordInput(attrs={'placeholder': 'Confirme a senha'})
+    )
