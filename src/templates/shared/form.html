@@ -6,9 +6,17 @@
         <span>Carregando...</span>
     </div>
     {% csrf_token %}
+    {% if form is not None %}
     <h2>{{ form.name }}</h2>
     {{ form }}
+    {% endif %}
+    {% if text is not None %}
+    <h2 class="text-header">{{ text.header }}</h2>
+    <p>{{ text.content }}</p>
+    {% endif %}
+    {% if form %}
     {% include "shared/button.html" with type="submit" text="Enviar" css_class="submit-button" %}
+    {% endif %}
     {% block form_extra_content%}
     {% endblock form_extra_content%}
 </form>

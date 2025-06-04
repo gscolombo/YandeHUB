@@ -31,7 +31,7 @@ def register(request: HttpRequest) -> HttpResponse:
 
 def recover_password(request: HttpRequest) -> HttpResponse:
     if request.method == 'GET':
-        return render(request, 'auth/recover_password.html', context={"form": None})
+        return render(request, 'auth/recover_password.html', context={"form": RecoverPasswordForm()})
 
     assert request.method == 'POST', "Invalid request method"
 
