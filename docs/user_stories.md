@@ -1,12 +1,11 @@
 # Visualização de conteúdo em página inicial
-> _**Como** usuário, **eu quero** visualizar uma listagem de feiras **para** poder descobrir e escolher feiras indígenas que desejo ou posso participar_<br>
+> _**Como** usuário, **eu quero** visualizar as feiras indígenas cadastradas no sistema **para** poder descobrir e escolher quais eu desejo ou posso participar._<br>
 > _**Como** usuário, **eu quero** poder filtrar a listagem de feiras **para** visualizar somente feiras que apresentam propriedades específicas._<br>
-> _**Como** usuário, **eu quero** poder visualizar uma listagem de expositores de uma feira **para** melhor avaliar se irei ou não participar de alguma feira._<br>
-> _**Como** usuário, **eu quero** poder visualizar a quantidade de ingressos de uma feira **para** me organizar para participar da feira ou saber o volume de participantes esperado para o evento._<br>
-> _**Como** usuário, **eu quero** visualizar uma listagem de produtos de um expositor de uma feira **para** saber antecipadamente os produtos que estarão disponíveis na feira._<br>
+> _**Como** usuário, **eu quero** visualizar os expositores de uma feira **para** melhor avaliar se irei ou não participar de alguma feira._<br>
+> _**Como** usuário, **eu quero** visualizar a quantidade de ingressos de uma feira **para** me organizar para participar da feira ou saber o volume de participantes esperado para o evento._<br>
+> _**Como** usuário, **eu quero** visualizar os produtos de um expositor de uma feira **para** saber antecipadamente os produtos que estarão disponíveis na feira._<br>
 > _**Como** usuário visitante, **eu quero** ter a opção de me autenticar no sistema **para** cadastrar, editar ou deletar feiras organizadas por mim._<br>
-> _**Como** usuário autenticado, **eu quero** ter a opção de acessar uma página pessoal **para** visualizar ou editar as informações da minha conta ou deletá-la._<br>
-> _**Como** usuário autenticado, **eu quero** ter a opção de acessar uma página **para** cadastrar ou editar uma feira e visualizar as feiras que cadastrei._ 
+
 
 ## Detalhamento
 - ### Visitante 
@@ -21,8 +20,8 @@
     Cicrano é um organizador de feiras que utiliza o **YandêHUB** para registrar feiras. Nesse caso, ele possui cadastro no sistema. Ao acessar a *home-page*, ele é apresentado à mesma listagem de Fulano. Depois de se autenticar, a barra de navegação apresenta um botão adicional para cadastro de uma nova feira e um botão para acessar seu perfil de usuário, com visualizações dedicadas para essas funcionalidades.
 
 # Autenticação de usuário
-> _**Como** usuário visitante, **eu quero** preencher um formulário **para** realizar *login* no sistema._<br>
-> _**Como** usuário visitante, **eu quero** preencher um formulário **para** cadastrar uma conta de usuário no sistema._<br>
+> _**Como** usuário visitante, **eu quero** realizar login no sistema **para** poder gerenciar as feiras que organizo._<br>
+> _**Como** usuário visitante, **eu quero** me cadastrar no sistema **para** para poder começar a organizar e divulgar feiras._<br>
 > _**Como** usuário visitante, **eu quero** solicitar um *link* por e-mail **para** recuperar a minha senha pelo cadastro de uma nova senha._
 
 ## Detalhamento
@@ -34,3 +33,50 @@
     
 - ### Cadastro
     Beltrano é um organizador de feiras que decidiu utilizar o **YandêHUB** para registrar feiras. Ao acessar a tela de *login* após clicar no botão para autenticação no sistema, ele clica no botão para cadastro no sistema. Com isso, o formulário é modificado com 4 campos de entrada: um para o nome, um para *e-mail* e dois para senha, com o segundo destinado para a confirmação da senha. Ao final do formulário, há um botão para submissão do formulário que efetiva o cadastro no sistema. Esse botão só é habilitado caso todos os campos estejam preenchidos. Há um botão para voltar para o formulário de *login*. Ao submeter o formulário, um ícone de carregamento é apresentado enquanto o sistema processa os dados. Em caso de sucesso, Beltrano é informado que está cadastrado no sistema e que será redirecionado à página inicial já autenticado no sistema. Após alguns segundos, Beltrano é redirecionado para a página inicial como um usuário autenticado. Em caso de falha, é apresentada uma mensagem de erro a Beltrano, solicitando que tente novamente mais tarde.
+
+# Criação/edição/deleção de registro
+
+> _**Como** usuário autenticado, **eu quero** visualizar as feiras que cadastrei **para** poder gerenciar as feiras que estou organizando._<br>
+> _**Como** usuário autenticado, **eu quero** cadastrar uma feira **para** permitir que outros usuários tenham conhecimento do evento._<br>
+> _**Como** usuário autenticado, **eu quero** emitir os ingressos para uma feira que cadastrei **para** poder distribuí-los quando eu achar necessário._<br>
+>  _**Como** usuário autenticado, **eu quero** alterar os dados de uma feira cadastrada por mim **para** atualizar as informações vistas por outros usuários._<br>
+>  _**Como** usuário autenticado, **eu quero** deletar uma feira cadastrada por mim **para** que ela não seja mais apresentada para outros usuários._<br>
+>  _**Como** usuário autenticado, **eu quero** cadastrar os dados de um expositor de uma feira e seus produtos **para** que estejam visíveis a outros usuários._<br>
+>  _**Como** usuário autenticado, **eu quero** alterar os dados de um expositor de uma feira e seus produtos **para** que estejam em conformidade com o especificado pelo expositor._<br>
+
+## Detalhamento
+
+- ### Visualização de feiras
+
+    Após efetuar *login* no sistema, Sicrano acessou a página para cadastrar uma nova feira. A página apresenta para ele uma listagem das feiras que ele cadastrou, contendo: nome, a data de criação e a última data de atualização. Além disso, para cada feira, ele tem a opção de editá-la, deletá-la e visualizar mais detalhes da feira, como os expositores e seus produtos e os ingressos emitidos. A opção para cadastrar uma nova feira está disponível o tempo todo.
+
+- ### Criação de feira
+
+    Ao clicar na opção para criar uma nova feira, é apresentado para o Sicrano um formulário com campos para inserir os dados da feira: nome, data de início e término, local, cidade, estado, descrição, uma imagem ilustrativa, o número de ingressos e uma lista dinâmica de expositores da feira. Caso Sicrano selecione a opção para incluir um expositor na lista, é apresentado um formulário com os campos: nome, e-mail, telefone, descrição e uma lista dinâmica de produtos, da mesma forma que a lista de expositores, que permite o cadastro de produtos associados ao expositor. Sicrano também tem a opção de editar ou deletar qualquer expositor/produto da lista dinâmica. \
+    A submissão do formulário só pode ser realizada com todos os campos preenchidos, exceto pela imagem ilustrativa, que é opcional. A lista de expositores deve ter pelo menos um item, assim como a lista de produtos desse expositor. \
+    Caso as informações estejam válidas, ao submeter o formulário, Sicrano é redirecionado para a lista de feira contendo a nova feira cadastrada. Caso contrário, os erros de validação são apresentados a Sicrano. Caso ocorra algum problema durante o processamento dos dados, Sicrano também é informado do erro de servidor.
+
+- ### Edição de feira
+    Ao clicar na opção para editar uma feira, é apresentado para o Sicrano o mesmo formulário para inserir os dados de uma nova feira, porém com os campos pré-preenchidos. A alteração de qualquer campo para valores diferentes do original habilitam o salvamento das informações, desde que não seja um valor nulo (exceto para a imagem ilustrativa). As regras associadas às listas de expositores e produtos na criação da feira ainda se aplicam. \
+    Quando Sicrano submete o formulário para salvar as alterações, é pedido que ele confirme as alterações, uma vez que não poderão ser desfeitas sem que uma nova edição seja realizada. Ao confirmar e caso os novos dados sejam válidos, Sicrano é redirecionado para a lista de feiras, com a data da última atualização da feira recém editada atualizada para a data atual. Caso contrário, os erros de validação são apresentados a Sicrano. Caso ocorra algum problema durante o processamento dos dados, Sicrano também é informado do erro de servidor.
+
+- ### Deleção de feira
+    Ao clicar na opção para deletar uma feira, é solicitado que Sicrano confirme a ação, que é irreversível. Caso ele confirme, após retorno da resposta do servidor, Sicrano é redirecionado para a lista de feiras sem a feira recém-deletada se o processamento da requisição tiver sido bem-sucedido. Caso ocorra algum problema, a falha do servidor é notificada para Sicrano e a operação não é efetivada.
+
+# Edição/deleção de conta
+
+> _**Como** usuário autenticado, **eu quero** visualizar ou editar as informações da minha conta **para** mantê-la em conformidade com os meus dados pessoais._<br>
+> _**Como** usuário autenticado, **eu quero** poder deletar a minha conta **para** ter meus dados pessoais deletados do sistema._<br>
+
+## Detalhamento
+
+- ### Visualização de conta
+    Após efetuar *login* no sistema, Sicrano acessou a página para visualizar os dados de sua conta. Na página, Sicrano confere seu nome e e-mail cadastrados. As ações de editar ou deletar a conta estão disponíveis para uso a qualquer momento.
+
+- ### Edição de conta
+    Caso Sicrano decida editar os dados da sua conta, ao escolher a ação de edição, um formulário pré-preenchido com seu nome e e-mail é apresentado a ele. Um outro formulário permite trocar a senha, com um campo para a nova senha e outro para confirmá-la, desde que a nova senha não seja igual a atual. A submissão de cada formulário só é habilitada se os respectivos campos não estiverem vazios. No caso do formulário para edição de nome e e-mail, também é necessário que o novo valor não seja igual ao anterior para pelo menos um dos campos. \
+    Após alterar seus dados, Sicrano submete o formulário e aguarda a resposta do servidor. Em caso de sucesso, ele é redirecionado para a página de visualização dos dados da conta. Caso contrário, ele é informado do erro do servidor e de como proceder.
+
+- ### Deleção de conta
+    Quando Sicrano decide deletar sua conta, ao escolher a ação de deleção, ele recebe uma mensagem com a opção de confirmar a operação, que é irreversível. Ao confirmar e aguardar resposta do servidor, ele é informado que seus dados foram deletados e que ele será redirecionado à página inicial, caso a operação tenha sido bem-sucedida. Caso contrário, ele é avisado que não foi possível concluir a operação, com instruções para como proceder. \
+    Após ser redirecionado à página inicial, Sicrano não é mais um usuário autenticado no sistema. Ele nota que recebeu um e-mail confirmando a deleção da sua conta.
