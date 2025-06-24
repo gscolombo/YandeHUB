@@ -1,7 +1,7 @@
 # Projeto de interface de usuário
 
 Abaixo são apresentados os *storyboards* para representação da interface de usuário. Todo *storyboard* é composto por *wireframes* das interfaces de usuário, criadas utilizando o aplicativo <a href="https://www.figma.com/pt-br/" target="_blank">**Figma**</a>. O projeto no aplicativo contendo os *wireframes* e os protótipos de tela podem ser acessados por <a href="https://www.figma.com/design/bJbnThnamYZAVoz7RFhZr6/Yand%C3%AAHUB?node-id=115-74&t=eIvDLpHEOtfoLahe-1" target="_blank">aqui</a>.<br>
-Os *storyboards* foram criados para cada seção dos [requisitos funcionais](../user_stories), utilizando o detalhamento de cada história de usuário para orientar a criação dos *wireframes* e as transições associadas.
+Os *storyboards* foram criados para cada seção dos [requisitos funcionais](user_stories.md), utilizando o detalhamento de cada história de usuário para orientar a criação dos *wireframes* e as transições associadas.
 
 ## Visualização de conteúdo
 <object style="border: 2px solid black; box-shadow: 0px 5px 10px 0px #000000AA; margin-bottom: 16px"
