@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Projeto de banco de dados - YandêHUB Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Projeto de banco de dados";
+        var mkdocs_page_input_path = "physical_db_project.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../../images/logo_with_bg.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introdução</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../project_plan/">Plano e gerenciamento de projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vision_scope/">Visão e escopo do projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_wide_requirements/">Requisitos do sistema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../user_stories/">Requisitos funcionais</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_architecture/">Arquitetura do sistema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ui_storyboards/">Projeto de interface do usuário</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Projeto de banco de dados</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">YandêHUB Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Projeto de banco de dados</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="projeto-fisico-de-banco-de-dados">Projeto físico de banco de dados</h1>
+<p>O projeto de banco de dados relacional para suporte às operações do sistema <strong>YandêHUB</strong> foi executado utilizando o aplicativo <em>web</em> <a href="https://docs.dbdiagram.io/" target="_blank">dbdiagram</a>. Essa ferramenta permite a criação de diagramas de banco de dados relacional (ERDs, do inglês <em>entity-relationship diagram</em>) para modelagem lógica. O diagrama construído é apresentado abaixo. Detalhes adicionais podem ser visualizados na <a href="https://dbdocs.io/gscolombo404/YandeHUB" target="_blank">página do projeto no <strong>dbdocs</strong></a>.</p>
+<p><img alt="image" src="../images/logical_db.png" /></p>
+<p>Como especificado no <a href="../system_architecture/">documento de arquitetura do sistema</a>, o sistema de gerenciamento de banco de dados utilizado em ambiente de produção será o <a href="https://www.postgresql.org/"><strong>PostgreSQL</strong></a>. Porém, em ambiente de desenvolvimento, o banco de dados <strong>SQLite</strong> inicializado pelo <em>framework</em> <strong>Django</strong> poderá ser utilizado. O <strong>dbdiagram</strong> facilita a inicialização do banco de dados no <strong>PostgreSQL</strong>, disponibilizando o código SQL para criação das colunas associadas a um banco de dados no SGDB, apresentado abaixo.</p>
+<pre><code class="language-sql">CREATE 
+
+CREATE TYPE &quot;states&quot; AS ENUM (
+  'AC',
+  'AL',
+  'AP',
+  'AM',
+  'BA',
+  'CE',
+  'DF',
+  'ES',
+  'GO',
+  'MA',
+  'MT',
+  'MS',
+  'MG',
+  'PA',
+  'PB',
+  'PE',
+  'PI',
+  'PR',
+  'RJ',
+  'RN',
+  'RO',
+  'RS',
+  'RR',
+  'SE',
+  'SC',
+  'SP',
+  'TO'
+);
+
+CREATE TABLE &quot;user&quot; (
+  &quot;id&quot; INT GENERATED BY DEFAULT AS IDENTITY UNIQUE PRIMARY KEY NOT NULL,
+  &quot;name&quot; varchar,
+  &quot;email&quot; varchar,
+  &quot;password&quot; varchar
+);
+
+CREATE TABLE &quot;fair&quot; (
+  &quot;id&quot; INT GENERATED BY DEFAULT AS IDENTITY UNIQUE PRIMARY KEY NOT NULL,
+  &quot;user_id&quot; int NOT NULL,
+  &quot;name&quot; varchar UNIQUE NOT NULL,
+  &quot;description&quot; text(300) NOT NULL,
+  &quot;start_date&quot; datetime NOT NULL,
+  &quot;end_date&quot; datetime NOT NULL,
+  &quot;local&quot; varchar NOT NULL,
+  &quot;city&quot; varchar NOT NULL,
+  &quot;state&quot; states NOT NULL,
+  &quot;img&quot; bytea
+);
+
+CREATE TABLE &quot;expositor&quot; (
+  &quot;id&quot; INT GENERATED BY DEFAULT AS IDENTITY UNIQUE PRIMARY KEY NOT NULL,
+  &quot;fair_id&quot; int NOT NULL,
+  &quot;name&quot; varchar NOT NULL,
+  &quot;description&quot; text(300) NOT NULL,
+  &quot;phone_number&quot; varchar,
+  &quot;email&quot; varchar
+);
+
+CREATE TABLE &quot;product&quot; (
+  &quot;id&quot; INT GENERATED BY DEFAULT AS IDENTITY UNIQUE PRIMARY KEY NOT NULL,
+  &quot;expositor_id&quot; int NOT NULL,
+  &quot;description&quot; varchar,
+  &quot;price&quot; float NOT NULL
+);
+
+CREATE TABLE &quot;ticket&quot; (
+  &quot;id&quot; INT GENERATED BY DEFAULT AS IDENTITY UNIQUE PRIMARY KEY NOT NULL,
+  &quot;fair_id&quot; int NOT NULL,
+  &quot;issue_date&quot; datetime NOT NULL
+);
+
+ALTER TABLE &quot;fair&quot; ADD FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;user&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;expositor&quot; ADD FOREIGN KEY (&quot;fair_id&quot;) REFERENCES &quot;fair&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;product&quot; ADD FOREIGN KEY (&quot;expositor_id&quot;) REFERENCES &quot;expositor&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;ticket&quot; ADD FOREIGN KEY (&quot;fair_id&quot;) REFERENCES &quot;fair&quot; (&quot;id&quot;);
+</code></pre>
+<p>Espera-se que a implantação do banco de dados seja realizada em uma máquina ou contâiner separada da aplicação principal, a fim de assegurar recursos de memória/processamento e prover maior segurança de dados e acesso. A instalação do servidor <strong>PostgreSQL</strong> seria realizada nesse nó, no qual seria criado o banco de dados para o <em>software</em> <strong>YandêHUB</strong> e o código acima seria utilizado para inicializar as tabelas necessários ao sistema.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ui_storyboards/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

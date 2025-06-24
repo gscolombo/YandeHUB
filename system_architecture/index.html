@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Arquitetura do sistema - YandêHUB Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Arquitetura do sistema";
+        var mkdocs_page_input_path = "system_architecture.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../../images/logo_with_bg.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introdução</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../project_plan/">Plano e gerenciamento de projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vision_scope/">Visão e escopo do projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_wide_requirements/">Requisitos do sistema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../user_stories/">Requisitos funcionais</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Arquitetura do sistema</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-proposito">1. Propósito</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-objetivos-arquitetonicos">2. Objetivos arquitetônicos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-decisoes-restricoes-e-justificativas">3. Decisões, restrições e justificativas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-padrao-de-arquitetura">4. Padrão de arquitetura</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-visualizacoes-de-arquitetura">5. Visualizações de arquitetura</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ui_storyboards/">Projeto de interface do usuário</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../physical_db_project/">Projeto de banco de dados</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">YandêHUB Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Arquitetura do sistema</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="arquitetura-de-software">Arquitetura de <em>software</em></h1>
+<h2 id="1-proposito">1. Propósito</h2>
+<p>Esse documento descreve as decisões, restrições e premissas técnicas para definição da arquitetura do sistema <strong>YandêHUB</strong>, assim como quaisquer outras informações relevantes para a estrutura e organização do <em>software</em>.</p>
+<h2 id="2-objetivos-arquitetonicos">2. Objetivos arquitetônicos</h2>
+<p>A arquitetura de <em>software</em> para o sistema <strong>YandêHUB</strong> deve permitir o uso pelo usuário de diferentes serviços para consulta, alteração e deleção de dados armazenados remotamente. Além disso, devido à restrição para execução em navegadores <em>web</em>, é esperado que a arquitetura considere a variabilidade de <em>hardware</em> e qualidade de conexão à Internet dos usuários para satisfazer os <a href="../system_wide_requirements/">requisitos de performance e usabilidade do <em>software</em></a>.<br>
+Pela possibilidade de inclusão de novos serviços além daqueles apresentados no <a href="../vision_scope/">documento de visão e escopo</a>, assim como possíveis alterações de requisitos, a arquitetura deve possuir componentes suficientemente desacoplados para permitir alterações e/ou incrementos em partes do sistema sem que haja comprometimento de outras partes ou ainda de todo o sistema. Nesse caso, isso requer a definição de interfaces bem definidas entre componentes.<br>
+Devido a necessidade de autenticação de usuários para uso de serviços restritos, assim como a listagem e visualização de registros, a arquitetura deve garantir que os dados associados ao sistema possam ser manipulados, com as devidas restrições, por diferentes usuários de modo concorrente. Ou seja, deve haver um componente único responsável pelo armazenamento dos dados, cuja interface deve estar bem definida para permitir a comunicação de serviços com esse componente.</p>
+<h2 id="3-decisoes-restricoes-e-justificativas">3. Decisões, restrições e justificativas</h2>
+<ul>
+<li>O desenvolvimento de <em>software</em> será realizado com <a href="https://www.djangoproject.com/start/overview/"><strong>Django</strong></a>, um <em>framework</em> <em>open-source</em> para desenvolvimento de aplicativos <em>web</em>, que provê funcionalidades para autenticação de usuário, comunicação com banco de dados, renderização dinâmica de conteúdo, etc. A facilidade de uso e rapidez de desenvolvimento permitirão o rápido <em>deploy</em> do sistema em um ambiente de produção.</li>
+<li>Desacoplamento entre visualização (<em>i.e.</em>, interface de usuário), manipulação (<em>i.e.</em>, serviços) e armazenamento de dados deve ser garantido, com interfaces bem definidas para permitir a comunicação entre os componentes respectivos, de tal forma que a alteração/incremento de partes não críticas não comprometam o funcionamento do sistema.</li>
+<li>O acesso a serviços deve ser dividido entre serviços privados e públicos. Os primeiros devem negar a requisição de usuários não autenticados, enquanto os segundos não possuem qualquer restrição para requisição. No entanto, ambos devem restringir a manipulação de dados para o mínimo necessário para realização do serviço.</li>
+<li>Qualquer serviço que envolva inserção, modificação ou deleção de dados deve ser realizada somente por usuários autenticados. A requisição desses serviços deve ser devidamente registrada em arquivos de <em>log</em>, apresentando ID e nome do usuário requisitante, data da requisição, serviço requisitado e parâmetros da requisição.</li>
+<li>O sistema de gerenciamento de banco de dados relacional (SGBDR) utilizado será o <a href="https://www.postgresql.org/">PostgreSQL</a>. Inicialmente, o banco de dados <a href="https://docs.djangoproject.com/en/5.2/intro/install/#install-python">SQLite</a> inicializado pelo Django poderá ser utilizado, mas deve-se ter em mente a transição para o PostgreSQL em um ambiente de produção.</li>
+</ul>
+<h2 id="4-padrao-de-arquitetura">4. Padrão de arquitetura</h2>
+<p>Em conformidade com o oferecido pelo <em>framework</em> Django, a arquitetura do sistema será baseado no padrão MVC (do inglês, <em>Model-View-Controller</em>), com algumas modificações para diferenciar serviços dos modelos de dados em si. Os componentes referentes ao <em>Controller</em> e à <em>View</em> devem ter suas funções originais do padrão preservadas. Note que o Django utiliza os termos <em>View</em> para o que seria o <em>Controller</em> e <em>Template</em> para o que seria a <em>View</em>, como explicado <a href="https://docs.djangoproject.com/en/5.2/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names">aqui</a>.</p>
+<h2 id="5-visualizacoes-de-arquitetura">5. Visualizações de arquitetura</h2>
+<p>Abaixo é apresentada a visualização lógica da arquitetura.</p>
+<p><img alt="image" src="../images/system_architecture.drawio.svg" />.</p>
+<p>Como descrito acima, um Serviço é o que permite a manipulação de modelos de dados pelo usuário, a partir da requisição recebida e mapeada pelo Controlador. Um Serviço pode chamar um método de um ou mais Modelos para executar a operação necessária. Tais métodos são específicos de um Modelo e não devem depender de atributos ou métodos de outros Modelos.
+Por sua vez, um Modelo deve ser capaz de se comunicar com um banco de dados. Os métodos implementados para um Modelo devem representar transações no banco de dados e operações específicas para o modelo, como a autenticação de credenciais de um usuário (cujo método associado pode ser utilizado por um serviço de autenticação para retorno de um <em>token</em>, por exemplo).<br>
+Como mencionado acima, o Controlador e a Visualização mantém suas funções originais do padrão MVC, com a diferença que o Controlador realiza chamadas para Serviços ao invés de Modelos. O Controlador também é responsável por retornar visualizações ao usuário de páginas HTML geradas dinamicamente, definida por uma Visualização que importa Modelos para apresentação dos dados armazenados no banco de dados.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../user_stories/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ui_storyboards/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

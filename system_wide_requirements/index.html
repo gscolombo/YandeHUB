@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Requisitos do sistema - YandêHUB Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Requisitos do sistema";
+        var mkdocs_page_input_path = "system_wide_requirements.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../../images/logo_with_bg.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introdução</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../project_plan/">Plano e gerenciamento de projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vision_scope/">Visão e escopo do projeto</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Requisitos do sistema</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#desempenho">Desempenho</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#infraestrutura">Infraestrutura</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#seguranca">Segurança</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usabilidade">Usabilidade</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#acessibilidade">Acessibilidade</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#arquitetura">Arquitetura</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../user_stories/">Requisitos funcionais</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_architecture/">Arquitetura do sistema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ui_storyboards/">Projeto de interface do usuário</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../physical_db_project/">Projeto de banco de dados</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">YandêHUB Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Requisitos do sistema</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="requisitos-nao-funcionais">Requisitos não funcionais</h1>
+<p>O presente documento lista os requisitos não funcionais do produto <strong>YandêHUB</strong>. Cada requisito faz parte de pelo menos uma das seguintes categorias: <strong>desempenho</strong>, <strong>infraestrutura</strong>, <strong>segurança</strong>, <strong>usabilidade</strong>, <strong>acessibilidade</strong> e <strong>arquitetura</strong>. Na listagem abaixo, o requisito será incluído na categoria na qual melhor condiz.</p>
+<h2 id="desempenho">Desempenho</h2>
+<p style="background-color: #00000066; padding: 10px; border-radius: 5px; color: white;"><i>As ferramentas de desenvolvedor do navegador devem ser utilizadas para avaliar os requisitos abaixo.</i></p>
+
+<ul>
+<li>Para uma velocidade de <em>download</em> de 30 Mbps e <em>upload</em> de 15 Mbps:<ul>
+<li>O tempo de espera pelo retorno da requisição por qualquer serviço não deve ultrapassar 5 segundos.</li>
+<li>O tempo para <em>download</em> de mídias e fontes não deve ultrapassar 2 segundos.</li>
+</ul>
+</li>
+<li>Para velocidades de <em>download</em> e <em>upload</em> acima de 500 Kbps, o tempo de espera para qualquer requisição não deve ultrapassar 15 segundos.</li>
+<li>A taxa de <em>frames</em> da interface de usuário deve ser sempre maior ou igual a 30 fps.</li>
+<li>Funções para processamentos de dados devem apresentar tempo de execução de até 1 segundo.</li>
+</ul>
+<h2 id="infraestrutura">Infraestrutura</h2>
+<ul>
+<li>O produto deve ser projetado e implementado para acesso em navegadores <em>web</em>, preferencialmente Google Chrome e Mozilla Firefox, em computadores pessoais (PCs) como <em>notebooks</em> e <em>desktops</em>.</li>
+<li>O produto não deve ser necessariamente planejado para execução em dispositivos <em>mobile</em> (<em>e.g.,</em> tablets e celulares), porém a consideração desses dispositivos em decisões técnicas é encorajada.</li>
+<li>A execução do <em>software</em> deve ser realizada em contêineres (<em>e.g.</em>, Docker) para padronização do ambiente de execução (<em>runtime enviroment</em>).</li>
+<li>Para minimização de latência, a infraestrutura de hospedagem do <em>software</em> deve estar localizada em território brasileiro.</li>
+</ul>
+<h2 id="seguranca">Segurança</h2>
+<ul>
+<li>Sessões de usuários autenticados devem ser associadas a identificadores únicos criados a partir de informações desse usuário. Esse identificador deve estar acessível somente ao usuário autenticado e ao sistema e seu uso deve estar restrito à consulta e deleção para ambos, sem qualquer possibilidade de modificação após a criação do identificador.</li>
+<li>A deleção do identificador de uma sessão de usuário deve implicar na finalização dessa sessão.</li>
+<li>Toda comunicação entre sistemas que compõem o <em>software</em> deve ser realizada utilizando protocolo HTTPS/1.1 ou HTTPS/2.</li>
+<li>Dados pessoais de usuários devem ser armazenados em bancos de dados de acesso restrito, autorizado somente para o <em>software</em>, mediante requisição do respectivo usuário, e para administradores do bancos de dados.</li>
+<li>Senhas devem ser armazenadas como <em>hashs</em> no banco de dados, utilizando o algoritmo SHA-256.</li>
+<li>Toda comunicação ao banco de dados deve ser realizada pelo <em>software</em>, mediante requisição do usuário possibilitada pela interface de usuário, e por administradores do banco de dados.</li>
+</ul>
+<h2 id="usabilidade">Usabilidade</h2>
+<ul>
+<li>Animações, transições e outros efeitos de tela devem ser minimalistas, preferencialmente restritos a <em>fade-in/out</em>, translações curtas e suavizadas e alterações de opacidade de elementos.</li>
+<li>Formulários devem conter instruções explícitas para o seu preenchimento e validação.</li>
+<li>Textos devem conter até 240 caracteres, exceto para textos com finalidade de descrever algum registro, cujo limite deve ser de 1000 caracteres. Para os dois casos, inclui-se os espaços.</li>
+<li>Erros durante requisições de usuário devem ser suficientemente informados ao requisitante.</li>
+</ul>
+<h2 id="acessibilidade">Acessibilidade</h2>
+<ul>
+<li>Toda imagem deve apresentar texto alternativo para leitores de tela.</li>
+</ul>
+<h2 id="arquitetura">Arquitetura</h2>
+<ul>
+<li>O <em>design</em> do sistema deve facilitar a inclusão de novos serviços para o <em>software</em>.</li>
+<li>A arquitetura do sistema deve propiciar a escalabilidade horizontal da infraestrutura.</li>
+<li>A lógica de integração entre cliente e servidor deve facilitar a extensão da execução do <em>software</em> associado ao cliente para outros dispositivos.</li>
+<li>O acoplamento entre os serviços oferecidos pelo <em>software</em> deve ser minimizado.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../vision_scope/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../user_stories/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

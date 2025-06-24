@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Requisitos funcionais - YandêHUB Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Requisitos funcionais";
+        var mkdocs_page_input_path = "user_stories.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../../images/logo_with_bg.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introdução</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../project_plan/">Plano e gerenciamento de projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vision_scope/">Visão e escopo do projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_wide_requirements/">Requisitos do sistema</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Requisitos funcionais</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#visualizacao-de-conteudo-em-pagina-inicial">Visualização de conteúdo em página inicial</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#detalhamento">Detalhamento</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#visitante">Visitante</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#usuario-autenticado">Usuário autenticado</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#autenticacao-de-usuario">Autenticação de usuário</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#detalhamento_1">Detalhamento</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#login">Login</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recuperacao-de-senha">Recuperação de senha</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cadastro">Cadastro</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#criacaoedicaodelecao-de-registro">Criação/edição/deleção de registro</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#detalhamento_2">Detalhamento</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#visualizacao-de-feiras">Visualização de feiras</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#criacao-de-feira">Criação de feira</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#edicao-de-feira">Edição de feira</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#delecao-de-feira">Deleção de feira</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#edicaodelecao-de-conta">Edição/deleção de conta</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#detalhamento_3">Detalhamento</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#visualizacao-de-conta">Visualização de conta</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#edicao-de-conta">Edição de conta</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#delecao-de-conta">Deleção de conta</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_architecture/">Arquitetura do sistema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ui_storyboards/">Projeto de interface do usuário</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../physical_db_project/">Projeto de banco de dados</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">YandêHUB Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Requisitos funcionais</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="requisitos-funcionais">Requisitos funcionais</h1>
+<h2 id="visualizacao-de-conteudo-em-pagina-inicial">Visualização de conteúdo em página inicial</h2>
+<blockquote>
+<p><em><strong>Como</strong> usuário, <strong>eu quero</strong> visualizar as feiras indígenas cadastradas no sistema <strong>para</strong> poder descobrir e escolher quais eu desejo ou posso participar.</em><br>
+<em><strong>Como</strong> usuário, <strong>eu quero</strong> poder filtrar a listagem de feiras <strong>para</strong> visualizar somente feiras que apresentam propriedades específicas.</em><br>
+<em><strong>Como</strong> usuário, <strong>eu quero</strong> visualizar os expositores de uma feira <strong>para</strong> melhor avaliar se irei ou não participar de alguma feira.</em><br>
+<em><strong>Como</strong> usuário, <strong>eu quero</strong> visualizar a quantidade de ingressos de uma feira <strong>para</strong> me organizar para participar da feira ou saber o volume de participantes esperado para o evento.</em><br>
+<em><strong>Como</strong> usuário, <strong>eu quero</strong> visualizar os produtos de um expositor de uma feira <strong>para</strong> saber antecipadamente os produtos que estarão disponíveis na feira.</em><br>
+<em><strong>Como</strong> usuário visitante, <strong>eu quero</strong> ter a opção de me autenticar no sistema <strong>para</strong> cadastrar, editar ou deletar feiras organizadas por mim.</em><br></p>
+</blockquote>
+<h3 id="detalhamento">Detalhamento</h3>
+<ul>
+<li>
+<h4 id="visitante">Visitante</h4>
+<p>Fulano é um entusiasta de feiras que decidiu acessar o <strong>YandêHUB</strong> para procurar a próxima feira que irá visitar. Ao acessar a <em>home-page</em>, é apresentado para ele uma listagem de feiras, em forma de grade, ordenadas (da esquerda para direita e de cima para baixo) por proximidade da data de abertura da feira com a data atual. Feiras finalizadas são incluídas ao final da listagem. Uma barra de navegação na parte superior do site apresenta a logo do <strong>YandêHUB</strong> e um botão para autenticação no sistema. Clicar no botão leva à página de autenticação do usuário. \
+Em cada item da listagem, é apresentado o nome da feira, a data de início e término, uma imagem representativa da feira, um breve resumo descritivo e um botão para visualizar mais detalhes sobre a feira. Na parte superior da listagem, há campos para filtrar feiras: um de texto para nome, dois de data de início e término e duas listas de opções para cidade e estado. Ao definir qualquer filtro, a listagem é atualizada para apresentar somente as feiras que satisfazem o filtro.
+Ao clicar no botão para visualizar detalhes em algum item da listagem, é aberto um <em>modal</em> contendo mais informações sobre a respectiva feira: nome, data de início, data de término, local, cidade, estado e número de ingressos disponíveis. \
+Também são apresentados os nomes dos expositores cadastrados na feira, com um botão para visualizar os produtos oferecidos pelo expositor. Ao clicar no botão, o <em>modal</em> é alterado para apresentar uma listagem dos produtos do expositor, junto ao nome, descrição e contato do expositor e um botão para voltar para a listagem de expositores. Cada item da listagem de produtos apresenta o nome e preço do produto, junto a uma imagem ilustrativa. Ao sobrepor o cursor sobre o produto, é apresentada uma descrição curta do produto. O <em>modal</em> apresenta uma botão para fechar a todo momento.
+A listagem de feiras apresenta até 10 feiras. Caso haja mais feiras cadastradas que satisfaçam o filtro aplicado, uma paginação é disponibilizada ao final da listagem.</p>
+</li>
+<li>
+<h4 id="usuario-autenticado">Usuário autenticado</h4>
+<p>Cicrano é um organizador de feiras que utiliza o <strong>YandêHUB</strong> para registrar feiras. Nesse caso, ele possui cadastro no sistema. Ao acessar a <em>home-page</em>, ele é apresentado à mesma listagem de Fulano. Depois de se autenticar, a barra de navegação apresenta um botão adicional para cadastro de uma nova feira e um botão para acessar seu perfil de usuário, com visualizações dedicadas para essas funcionalidades.</p>
+</li>
+</ul>
+<h2 id="autenticacao-de-usuario">Autenticação de usuário</h2>
+<blockquote>
+<p><em><strong>Como</strong> usuário visitante, <strong>eu quero</strong> realizar login no sistema <strong>para</strong> poder gerenciar as feiras que organizo.</em><br>
+<em><strong>Como</strong> usuário visitante, <strong>eu quero</strong> me cadastrar no sistema <strong>para</strong> para poder começar a organizar e divulgar feiras.</em><br>
+<em><strong>Como</strong> usuário visitante, <strong>eu quero</strong> solicitar um <em>link</em> por e-mail <strong>para</strong> recuperar a minha senha pelo cadastro de uma nova senha.</em></p>
+</blockquote>
+<h3 id="detalhamento_1">Detalhamento</h3>
+<ul>
+<li>
+<h4 id="login">Login</h4>
+<p>Sicrano acessou o <strong>YandêHUB</strong> visando registrar uma feira. Como um usuário cadastrado, ao acessar a tela inicial, ele clicou no botão para autenticação no sistema, sendo redirecionado para uma outra página contendo uma formulário. O formulário apresenta dois campos, para <em>e-mail</em> e senha, e trẽs botões: um para realizar cadastro, um para recuperação de senha e outro para submissão do formulário. Esse último só é habilitado caso os campos de <em>e-mail</em> e senha estejam preenchidos. Ao inserir os dados e submeter o formulário, as informações são validadas e, caso positivo, Sicrano é redirecionado para a tela inicial alterada para um usuário autenticado. Caso negativo, é emitido um alerta ao usuário indicando que um usuário com as credenciais fornecidas não foi encontrado.</p>
+</li>
+<li>
+<h4 id="recuperacao-de-senha">Recuperação de senha</h4>
+<p>Ao realizar <em>login</em> no <strong>YandêHUB</strong>, Sicrano percebeu que esqueceu a senha dele. No formulário de <em>login</em>, ao clicar no botão para recuperação de senha, o formulário é modificado para somente um campo para <em>e-mail</em>, com instruções informando que Sicrano irá receber um <em>link</em> para redefinição de senha no <em>e-mail</em>, um botão para submissão do formulário e um botão para voltar ao formulário de <em>login</em>. O <em>e-mail</em> recebido informa que foi enviado devido a uma solicitação de recuperação de senha, assim como um aviso para ignorar a mensagem caso Sicrano não tenha realizado essa solicitação. Ao clicar no <em>link</em>, uma página é aberta em outro guia ou janela do navegador, com um formulário contendo 2 campos para inserção da nova senha. O segundo campo deve conter a mesma entrada do primeiro, a fim de confirmar a nova senha. O formulário também possui um botão para submissão, habilitado somente se os dois campos estiverem preenchidos. Ao clicar o botão, um ícone de carregamento é apresentado enquanto o sistema processa os dados. Em caso de sucesso no processamento dos dados, o formulário é substituído por uma mensagem informando ao Sicrano que tente <em>login</em> novamente com a nova senha. Caso contrário, é apresentada uma mensagem de falha no processamento dos dados ao Sicrano, solicitando que ele tente novamente mais tarde.</p>
+</li>
+<li>
+<h4 id="cadastro">Cadastro</h4>
+<p>Beltrano é um organizador de feiras que decidiu utilizar o <strong>YandêHUB</strong> para registrar feiras. Ao acessar a tela de <em>login</em> após clicar no botão para autenticação no sistema, ele clica no botão para cadastro no sistema. Com isso, o formulário é modificado com 4 campos de entrada: um para o nome, um para <em>e-mail</em> e dois para senha, com o segundo destinado para a confirmação da senha. Ao final do formulário, há um botão para submissão do formulário que efetiva o cadastro no sistema. Esse botão só é habilitado caso todos os campos estejam preenchidos. Há um botão para voltar para o formulário de <em>login</em>. Ao submeter o formulário, um ícone de carregamento é apresentado enquanto o sistema processa os dados. Em caso de sucesso, Beltrano é informado que está cadastrado no sistema e que será redirecionado à página inicial já autenticado no sistema. Após alguns segundos, Beltrano é redirecionado para a página inicial como um usuário autenticado. Em caso de falha, é apresentada uma mensagem de erro a Beltrano, solicitando que tente novamente mais tarde.</p>
+</li>
+</ul>
+<h2 id="criacaoedicaodelecao-de-registro">Criação/edição/deleção de registro</h2>
+<blockquote>
+<p><em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> visualizar as feiras que cadastrei <strong>para</strong> poder gerenciar as feiras que estou organizando.</em><br>
+<em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> cadastrar uma feira <strong>para</strong> permitir que outros usuários tenham conhecimento do evento.</em><br>
+<em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> emitir os ingressos para uma feira que cadastrei <strong>para</strong> poder distribuí-los quando eu achar necessário.</em><br>
+ <em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> alterar os dados de uma feira cadastrada por mim <strong>para</strong> atualizar as informações vistas por outros usuários.</em><br>
+ <em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> deletar uma feira cadastrada por mim <strong>para</strong> que ela não seja mais apresentada para outros usuários.</em><br>
+ <em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> cadastrar os dados de um expositor de uma feira e seus produtos <strong>para</strong> que estejam visíveis a outros usuários.</em><br>
+ <em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> alterar os dados de um expositor de uma feira e seus produtos <strong>para</strong> que estejam em conformidade com o especificado pelo expositor.</em><br></p>
+</blockquote>
+<h3 id="detalhamento_2">Detalhamento</h3>
+<ul>
+<li>
+<h4 id="visualizacao-de-feiras">Visualização de feiras</h4>
+<p>Após efetuar <em>login</em> no sistema, Sicrano acessou a página para cadastrar uma nova feira. A página apresenta para ele uma listagem das feiras que ele cadastrou, contendo: nome, a data de criação e a última data de atualização. Além disso, para cada feira, ele tem a opção de editá-la, deletá-la e visualizar mais detalhes da feira, como os expositores e seus produtos e os ingressos emitidos. A opção para cadastrar uma nova feira está disponível o tempo todo.</p>
+</li>
+<li>
+<h4 id="criacao-de-feira">Criação de feira</h4>
+<p>Ao clicar na opção para criar uma nova feira, é apresentado para o Sicrano um formulário com campos para inserir os dados da feira: nome, data de início e término, local, cidade, estado, descrição, uma imagem ilustrativa, o número de ingressos e uma lista dinâmica de expositores da feira. Caso Sicrano selecione a opção para incluir um expositor na lista, é apresentado um formulário com os campos: nome, e-mail, telefone, descrição e uma lista dinâmica de produtos, da mesma forma que a lista de expositores, que permite o cadastro de produtos associados ao expositor. Sicrano também tem a opção de editar ou deletar qualquer expositor/produto da lista dinâmica.<br>
+A submissão do formulário só pode ser realizada com todos os campos preenchidos, exceto pela imagem ilustrativa, que é opcional. A lista de expositores deve ter pelo menos um item, assim como a lista de produtos desse expositor.<br>
+Caso as informações estejam válidas, ao submeter o formulário, Sicrano é redirecionado para a lista de feira contendo a nova feira cadastrada. Caso contrário, os erros de validação são apresentados a Sicrano. Caso ocorra algum problema durante o processamento dos dados, Sicrano também é informado do erro de servidor.</p>
+</li>
+<li>
+<h4 id="edicao-de-feira">Edição de feira</h4>
+<p>Ao clicar na opção para editar uma feira, é apresentado para o Sicrano o mesmo formulário para inserir os dados de uma nova feira, porém com os campos pré-preenchidos. A alteração de qualquer campo para valores diferentes do original habilitam o salvamento das informações, desde que não seja um valor nulo (exceto para a imagem ilustrativa). As regras associadas às listas de expositores e produtos na criação da feira ainda se aplicam.<br>
+Quando Sicrano submete o formulário para salvar as alterações, é pedido que ele confirme as alterações, uma vez que não poderão ser desfeitas sem que uma nova edição seja realizada. Ao confirmar e caso os novos dados sejam válidos, Sicrano é redirecionado para a lista de feiras, com a data da última atualização da feira recém editada atualizada para a data atual. Caso contrário, os erros de validação são apresentados a Sicrano. Caso ocorra algum problema durante o processamento dos dados, Sicrano também é informado do erro de servidor.</p>
+</li>
+<li>
+<h4 id="delecao-de-feira">Deleção de feira</h4>
+<p>Ao clicar na opção para deletar uma feira, é solicitado que Sicrano confirme a ação, que é irreversível. Caso ele confirme, após retorno da resposta do servidor, Sicrano é redirecionado para a lista de feiras sem a feira recém-deletada se o processamento da requisição tiver sido bem-sucedido. Caso ocorra algum problema, a falha do servidor é notificada para Sicrano e a operação não é efetivada.</p>
+</li>
+</ul>
+<h2 id="edicaodelecao-de-conta">Edição/deleção de conta</h2>
+<blockquote>
+<p><em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> visualizar ou editar as informações da minha conta <strong>para</strong> mantê-la em conformidade com os meus dados pessoais.</em><br>
+<em><strong>Como</strong> usuário autenticado, <strong>eu quero</strong> poder deletar a minha conta <strong>para</strong> ter meus dados pessoais deletados do sistema.</em><br></p>
+</blockquote>
+<h3 id="detalhamento_3">Detalhamento</h3>
+<ul>
+<li>
+<h4 id="visualizacao-de-conta">Visualização de conta</h4>
+<p>Após efetuar <em>login</em> no sistema, Sicrano acessou a página para visualizar os dados de sua conta. Na página, Sicrano confere seu nome e e-mail cadastrados. As ações de editar ou deletar a conta estão disponíveis para uso a qualquer momento.</p>
+</li>
+<li>
+<h4 id="edicao-de-conta">Edição de conta</h4>
+<p>Caso Sicrano decida editar os dados da sua conta, ao escolher a ação de edição, um formulário pré-preenchido com seu nome e e-mail é apresentado a ele. Um outro formulário permite trocar a senha, com um campo para a nova senha e outro para confirmá-la, desde que a nova senha não seja igual a atual. A submissão de cada formulário só é habilitada se os respectivos campos não estiverem vazios. No caso do formulário para edição de nome e e-mail, também é necessário que o novo valor não seja igual ao anterior para pelo menos um dos campos.<br>
+Após alterar seus dados, Sicrano submete o formulário e aguarda a resposta do servidor. Em caso de sucesso, ele é redirecionado para a página de visualização dos dados da conta. Caso contrário, ele é informado do erro do servidor e de como proceder.</p>
+</li>
+<li>
+<h4 id="delecao-de-conta">Deleção de conta</h4>
+<p>Quando Sicrano decide deletar sua conta, ao escolher a ação de deleção, ele recebe uma mensagem com a opção de confirmar a operação, que é irreversível. Ao confirmar e aguardar resposta do servidor, ele é informado que seus dados foram deletados e que ele será redirecionado à página inicial, caso a operação tenha sido bem-sucedida. Caso contrário, ele é avisado que não foi possível concluir a operação, com instruções para como proceder.<br>
+Após ser redirecionado à página inicial, Sicrano não é mais um usuário autenticado no sistema. Ele nota que recebeu um e-mail confirmando a deleção da sua conta.</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../system_wide_requirements/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../system_architecture/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
