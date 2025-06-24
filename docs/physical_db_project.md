@@ -7,8 +7,6 @@ O projeto de banco de dados relacional para suporte às operações do sistema *
 Como especificado no [documento de arquitetura do sistema](system_architecture.md), o sistema de gerenciamento de banco de dados utilizado em ambiente de produção será o [**PostgreSQL**](https://www.postgresql.org/). Porém, em ambiente de desenvolvimento, o banco de dados **SQLite** inicializado pelo *framework* **Django** poderá ser utilizado. O **dbdiagram** facilita a inicialização do banco de dados no **PostgreSQL**, disponibilizando o código SQL para criação das colunas associadas a um banco de dados no SGDB, apresentado abaixo.
 
 ```sql
-CREATE 
-
 CREATE TYPE "states" AS ENUM (
   'AC',
   'AL',
