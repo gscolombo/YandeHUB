@@ -101,9 +101,7 @@
 <p>O projeto de banco de dados relacional para suporte às operações do sistema <strong>YandêHUB</strong> foi executado utilizando o aplicativo <em>web</em> <a href="https://docs.dbdiagram.io/" target="_blank">dbdiagram</a>. Essa ferramenta permite a criação de diagramas de banco de dados relacional (ERDs, do inglês <em>entity-relationship diagram</em>) para modelagem lógica. O diagrama construído é apresentado abaixo. Detalhes adicionais podem ser visualizados na <a href="https://dbdocs.io/gscolombo404/YandeHUB" target="_blank">página do projeto no <strong>dbdocs</strong></a>.</p>
 <p><img alt="image" src="../images/logical_db.png" /></p>
 <p>Como especificado no <a href="../system_architecture/">documento de arquitetura do sistema</a>, o sistema de gerenciamento de banco de dados utilizado em ambiente de produção será o <a href="https://www.postgresql.org/"><strong>PostgreSQL</strong></a>. Porém, em ambiente de desenvolvimento, o banco de dados <strong>SQLite</strong> inicializado pelo <em>framework</em> <strong>Django</strong> poderá ser utilizado. O <strong>dbdiagram</strong> facilita a inicialização do banco de dados no <strong>PostgreSQL</strong>, disponibilizando o código SQL para criação das colunas associadas a um banco de dados no SGDB, apresentado abaixo.</p>
-<pre><code class="language-sql">CREATE 
-
-CREATE TYPE &quot;states&quot; AS ENUM (
+<pre><code class="language-sql">CREATE TYPE &quot;states&quot; AS ENUM (
   'AC',
   'AL',
   'AP',
