@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Infraestrutura de implantação - YandêHUB Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Infraestrutura de implanta\u00e7\u00e3o";
+        var mkdocs_page_input_path = "deployment_infrastructure.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/logo_with_bg.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introdução</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../project_plan/">Plano e gerenciamento de projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vision_scope/">Visão e escopo do projeto</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_wide_requirements/">Requisitos do sistema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../user_stories/">Requisitos funcionais</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_architecture/">Arquitetura do sistema</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ui_storyboards/">Projeto de interface do usuário</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../physical_db_project/">Projeto de banco de dados</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Infraestrutura de implantação</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#proposito">Propósito</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#visao-geral">Visão geral</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#especificacoes-de-hardware">Especificações de hardware</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#instancia-aws-ec2">Instância AWS EC2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#especificacoes-de-software">Especificações de software</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outros-servicos">Outros serviços</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#aws-s3">AWS S3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lets-encrypt">Let's Encrypt</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#visualizacoes-de-arquitetura">Visualizações de arquitetura</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">YandêHUB Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Infraestrutura de implantação</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="descricao-da-infraestrutura-de-implantacao">Descrição da Infraestrutura de Implantação</h1>
+<h2 id="proposito">Propósito</h2>
+<p>Este documento descreve a infraestrutura necessária para implantação em produção do sistema YandêHUB, alinhado com a <a href="../system_architecture/">descrição de arquitetura de software</a>. As especificações apresentadas devem ser consideradas para uma implantação inicial, podendo sofrer alterações no futuro.</p>
+<h2 id="visao-geral">Visão geral</h2>
+<p>A infraestrutura será implantada na AWS utilizando os seguintes componentes/ferramentas principais:</p>
+<ul>
+<li><strong>Instância EC2</strong>: Hospedagem da aplicação Dockerizada.</li>
+<li><strong>Conteiners Docker</strong>:</li>
+<li>Container 1: Aplicação Django (servidor web)</li>
+<li>Container 2: Banco de dados PostgreSQL</li>
+<li><strong>Docker Compose</strong>: Orquestração de containers</li>
+<li><strong>Armazenamento EBS (<em>Elastic Block Store</em>)</strong>: Persistência de dados</li>
+</ul>
+<p>Ou seja, tanto a aplicação Django quanto o banco de dados PostgreSQL serão executadas na mesma instância AWS EC2, porém em containers separados, orquestrados utilizando o Docker Compose. A persistência dos dados no banco de dados será provida pelo volume fornecido pelo serviço EBS da AWS. Dessa forma, a aplicação irá se comunicar com o servidor de banco de dados como se este estivesse em uma máquina remota, o que provê maior segurança e escalabilidade para o sistema. O Docker Compose também deve ser utilizado para definir as configurações de rede para permitir essa comunicação.</p>
+<h2 id="especificacoes-de-hardware">Especificações de <em>hardware</em></h2>
+<ul>
+<li>
+<h3 id="instancia-aws-ec2">Instância AWS EC2</h3>
+<table>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th>Especificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo de Instância</td>
+<td><em>t3.medium</em></td>
+</tr>
+<tr>
+<td>vCPUs</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Memória</td>
+<td>4 GiB</td>
+</tr>
+<tr>
+<td>Armazenamento</td>
+<td>Volume EBS de 30 GB (SSD de uso geral)</td>
+</tr>
+<tr>
+<td>Sistema Operacional</td>
+<td>Ubuntu 24.04 LTS</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h2 id="especificacoes-de-software">Especificações de <em>software</em></h2>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Versão</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker Engine</td>
+<td>28.1+</td>
+<td>Tecnologia de containerização</td>
+</tr>
+<tr>
+<td>Docker Compose</td>
+<td>2.35+</td>
+<td>Orquestração de containers</td>
+</tr>
+<tr>
+<td>Interpretador Python</td>
+<td>3.11+</td>
+<td>Linguagem de programação da aplicação</td>
+</tr>
+<tr>
+<td>Django</td>
+<td>5.2+</td>
+<td><em>Framework</em> para aplicações web</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>16+</td>
+<td>SGDBR para persistência de dados</td>
+</tr>
+<tr>
+<td>Gunicorn</td>
+<td>23.0+</td>
+<td>Servidor WSGI</td>
+</tr>
+<tr>
+<td>Nginx</td>
+<td>1.28+</td>
+<td>Proxy reverso (recomendado pela <a href="https://docs.gunicorn.org/en/latest/deploy.html">documentação do Gunicorn</a>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="outros-servicos">Outros serviços</h2>
+<ul>
+<li>
+<h3 id="aws-s3">AWS S3</h3>
+<p>O uso de um <em>bucket</em> S3 da AWS deve ser utilizado para armazenamento de mídia, as quais, por ora, constituem somente as imagens ilustrativas de feiras e produtos.</p>
+</li>
+<li>
+<h3 id="lets-encrypt">Let's Encrypt</h3>
+<p>A <em>Let's Encrypt</em> é uma CA que fornece certificados TLS gratuitos. Deverá ser utilizada para habilitar criptografar a comunicações entre cliente e servidor utilizando HTTPS.</p>
+</li>
+</ul>
+<h2 id="visualizacoes-de-arquitetura">Visualizações de arquitetura</h2>
+<p>O diagrama abaixo apresenta a visão física da arquitetura de <em>software</em> correspondente à infraestrutura planejada.</p>
+<p><img alt="image" src="../images/system_architecture_physical_vision.drawio.svg" /></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../physical_db_project/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
