@@ -8,6 +8,7 @@ nav:
   - "Arquitetura do sistema": system_architecture.md
   - "Projeto de interface do usuário": ui_storyboards.md
   - "Projeto de banco de dados": physical_db_project.md
+  - "Infraestrutura de implantação": deployment_infrastructure.md
 theme:
   name: readthedocs
   color_mode: dark
