@@ -1,5 +1,4 @@
-# YandêHUB
-## Visão e Escopo
+# Visão e Escopo
 
 ### Introdução
 O presente documento apresenta uma visão geral acerca do projeto de desenvolvimento do *software* **YandêHUB**. Será apresentada uma descrição geral do produto, junto às soluções que almeja fornecer aos usuários e *stakeholders*, também especificados nesse documento.

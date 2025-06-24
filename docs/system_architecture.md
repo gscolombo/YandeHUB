@@ -1,12 +1,10 @@
-# ExpoHUB
-
-### Arquitetura de *software*
+# Arquitetura de *software*
 
 ## 1. Propósito
-Esse documento descreve as decisões, restrições e premissas técnicas para definição da arquitetura do sistema **ExpoHUB**, assim como quaisquer outras informações relevantes para a estrutura e organização do *software*.
+Esse documento descreve as decisões, restrições e premissas técnicas para definição da arquitetura do sistema **YandêHUB**, assim como quaisquer outras informações relevantes para a estrutura e organização do *software*.
 
 ## 2. Objetivos arquitetônicos
-A arquitetura de *software* para o sistema **ExpoHUB** deve permitir o uso pelo usuário de diferentes serviços para consulta, alteração e deleção de dados armazenados remotamente. Além disso, devido à restrição para execução em navegadores *web*, é esperado que a arquitetura considere a variabilidade de *hardware* e qualidade de conexão à Internet dos usuários para satisfazer os [requisitos de performance e usabilidade do *software*](system_wide_requirements.md).<br>
+A arquitetura de *software* para o sistema **YandêHUB** deve permitir o uso pelo usuário de diferentes serviços para consulta, alteração e deleção de dados armazenados remotamente. Além disso, devido à restrição para execução em navegadores *web*, é esperado que a arquitetura considere a variabilidade de *hardware* e qualidade de conexão à Internet dos usuários para satisfazer os [requisitos de performance e usabilidade do *software*](system_wide_requirements.md).<br>
 Pela possibilidade de inclusão de novos serviços além daqueles apresentados no [documento de visão e escopo](vision_scope.md), assim como possíveis alterações de requisitos, a arquitetura deve possuir componentes suficientemente desacoplados para permitir alterações e/ou incrementos em partes do sistema sem que haja comprometimento de outras partes ou ainda de todo o sistema. Nesse caso, isso requer a definição de interfaces bem definidas entre componentes.<br>
 Devido a necessidade de autenticação de usuários para uso de serviços restritos, assim como a listagem e visualização de registros, a arquitetura deve garantir que os dados associados ao sistema possam ser manipulados, com as devidas restrições, por diferentes usuários de modo concorrente. Ou seja, deve haver um componente único responsável pelo armazenamento dos dados, cuja interface deve estar bem definida para permitir a comunicação de serviços com esse componente.
 
@@ -23,7 +21,7 @@ Em conformidade com o oferecido pelo *framework* Django, a arquitetura do sistem
 ## 5. Visualizações de arquitetura
 Abaixo é apresentada a visualização lógica da arquitetura.
 
-![image](/docs/images/system_architecture.drawio.svg).
+![image](images/system_architecture.drawio.svg).
 
 Como descrito acima, um Serviço é o que permite a manipulação de modelos de dados pelo usuário, a partir da requisição recebida e mapeada pelo Controlador. Um Serviço pode chamar um método de um ou mais Modelos para executar a operação necessária. Tais métodos são específicos de um Modelo e não devem depender de atributos ou métodos de outros Modelos.
 Por sua vez, um Modelo deve ser capaz de se comunicar com um banco de dados. Os métodos implementados para um Modelo devem representar transações no banco de dados e operações específicas para o modelo, como a autenticação de credenciais de um usuário (cujo método associado pode ser utilizado por um serviço de autenticação para retorno de um *token*, por exemplo).<br>

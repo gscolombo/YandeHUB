@@ -1,0 +1,17 @@
+site_name: YandêHUB Docs
+nav:
+  - Introdução: index.md
+  - "Plano e gerenciamento de projeto": project_plan.md
+  - "Visão e escopo do projeto": vision_scope.md
+  - "Requisitos do sistema": system_wide_requirements.md
+  - "Requisitos funcionais": user_stories.md
+  - "Arquitetura do sistema": system_architecture.md
+  - "Projeto de interface do usuário": ui_storyboards.md
+  - "Projeto de banco de dados": physical_db_project.md
+theme:
+  name: readthedocs
+  color_mode: dark
+  nav_style: dark
+  locale: pt_BR
+  prev_next_buttons_location: none
+  logo: ../images/logo_with_bg.svg

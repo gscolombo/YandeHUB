@@ -1,9 +1,7 @@
-# ExpoHUB
-## Plano de Projeto
-
+# Plano e gerenciamento de projeto
 
 ### Introdução
-O presente documento apresenta as atividades associadas ao projeto para desenvolvimento do *software* **ExpoHUB**, assim como métricas para avaliação de progresso e o cronograma tentativo dividido por iterações.
+O presente documento apresenta as atividades associadas ao projeto para desenvolvimento do *software* **YandêHUB**, assim como métricas para avaliação de progresso e o cronograma tentativo dividido por iterações.
 
 ### Práticas e medidas
 O processo de desenvolvimento de _software_ utilizado nesse projeto é iterativo e incremental, com etapas pré-definidas a serem seguidas em cada iteração:
@@ -36,21 +34,23 @@ O gerenciamento do projeto será realizado no [Github Projects](https://docs.git
 - Requisitos (se aplicável)
 
 O quadro *kanban* terá as seguintes colunas: *Backlog*, *Para fazer*, *Em andamento* e *Concluído*, nessa ordem. Caso haja necessidade, colunas intermediárias podem ser adicionados para satisfazer etapas específicas. 
-Um modelo de _card_ de tarefa pode ser conferido abaixo. Para todo _card_, deve ser atribuído uma categoria (_label_) e uma prioridade, assim como um repositório associado. Dessa forma, todo card consiste em uma _issue_ de algum repositório. _Issues_ podem conter _sub-issues_, ou seja, subtarefas. *Cards* que não correspondem a uma *issue* de algum repositório são definidos como *drafts* (rascunhos) por padrão no Github Projects.
+Um modelo de _card_ de tarefa pode ser conferido abaixo, em linguagem *markdown*. Para todo _card_, deve ser atribuído uma categoria (_label_) e uma prioridade, assim como um repositório associado. Dessa forma, todo card consiste em uma _issue_ de algum repositório. _Issues_ podem conter _sub-issues_, ou seja, subtarefas. *Cards* que não correspondem a uma *issue* de algum repositório são definidos como *drafts* (rascunhos) por padrão no Github Projects.
 
----
-> # Título da tarefa 
-> *Definição da tarefa*
-> ### Descrição (opcional)
-> *Detalhamento sobre o trabalho a ser feito.*
-> ### Premissas (opcional)
-> *Premissas para execução da tarefa.*
-> ### Requisitos
-> *Lista de requisitos (funcionais e não funcionais) a serem cumpridos para finalização da tarefa.*
+```markdown
+# Título da tarefa 
+*Definição da tarefa*
 
----
+### Descrição (opcional)
+*Detalhamento sobre o trabalho a ser feito.*
 
-### Marcos e objetivos
+### Premissas (opcional)
+*Premissas para execução da tarefa.*
+
+### Requisitos
+*Lista de requisitos (funcionais e não funcionais) a serem cumpridos para finalização da tarefa.*
+```
+
+### Cronograma
 O cronograma tentativo do projeto, dividido em iterações por linha, é apresentado abaixo. Cada iteração deve durar o período de uma semana. O projeto criado no Github deverá refletir as iterações definidas aqui, pela visualização do *roadmap*, e vice-versa. Portanto, poderão haver divergências entre o cronograma apresentado abaixo e o *roadmap*.
 
 | Período | Atividades | Entregas |

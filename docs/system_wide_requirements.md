@@ -1,11 +1,13 @@
 # Requisitos não funcionais
 
-O presente documento lista os requisitos não funcionais do produto **ExpoHUB**. Cada requisito faz parte de pelo menos uma das seguintes categorias: desempenho, infraestrutura, segurança, usabilidade, acessibilidade e arquitetura. Na listagem abaixo, o requisito será incluído na categoria na qual melhor condiz.
+O presente documento lista os requisitos não funcionais do produto **YandêHUB**. Cada requisito faz parte de pelo menos uma das seguintes categorias: **desempenho**, **infraestrutura**, **segurança**, **usabilidade**, **acessibilidade** e **arquitetura**. Na listagem abaixo, o requisito será incluído na categoria na qual melhor condiz.
 
 ## Desempenho
-- Para uma velocidade de *download* de 30 Mbps e *upload* de 15 Mbps (conexão *wi-fi* típica):
-  - O tempo de espera pelo retorno da requisição por qualquer serviço não deve ultrapassar 5 segundos.
-  - O tempo para *download* de mídias e fontes não deve ultrapassar 2 segundos.
+<p style="background-color: #00000066; padding: 10px; border-radius: 5px; color: white;"><i>As ferramentas de desenvolvedor do navegador devem ser utilizadas para avaliar os requisitos abaixo.</i></p>
+
+- Para uma velocidade de *download* de 30 Mbps e *upload* de 15 Mbps:
+    - O tempo de espera pelo retorno da requisição por qualquer serviço não deve ultrapassar 5 segundos.
+    - O tempo para *download* de mídias e fontes não deve ultrapassar 2 segundos.
 - Para velocidades de *download* e *upload* acima de 500 Kbps, o tempo de espera para qualquer requisição não deve ultrapassar 15 segundos.
 - A taxa de *frames* da interface de usuário deve ser sempre maior ou igual a 30 fps.
 - Funções para processamentos de dados devem apresentar tempo de execução de até 1 segundo.
