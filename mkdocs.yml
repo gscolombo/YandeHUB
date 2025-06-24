@@ -14,4 +14,4 @@ theme:
   nav_style: dark
   locale: pt_BR
   prev_next_buttons_location: none
-  logo: ../images/logo_with_bg.svg
+  logo: images/logo_with_bg.svg
